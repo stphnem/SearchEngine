@@ -132,7 +132,7 @@ if __name__ == "__main__":
     cleaner = Cleaner(style=True, links=True, page_structure=True)
     DATA_PATH = 'data/test_dump'
     INDEX_PATH = 'D:\Documents\CS121\Assignment 3\data\index.txt'
-    STOPWORD_PATH = 'D:\Documents\CS121\Assignment 3\stopwords.txt'
+    STOPWORD_PATH = 'stopwords.txt'
 
     # Global variables
     stopwords = read_stopwords(STOPWORD_PATH)
