@@ -37,9 +37,11 @@ def tokenize_string(text):
     :param text: text to parse
     :return: list of tokens
     '''
+    global stopwords
     remove_punctuation_map = dict((ord(char), None) for char in string.punctuation)
     words = text.strip().lower().translate(remove_punctuation_map)
-    return words.split()
+    words = [word for word in words.split() if word not in stopwords]
+    return words
 
 
 def remove_stopwords(text):
@@ -148,9 +150,6 @@ if __name__ == "__main__":
             if fileName[-3:] == 'txt':
                 print("Parsing " + fileName)
                 data = read_json(DATA_PATH + "/" + fileName)
-                # Remove stop words, save it to variable, pass it to tokenize_string
-                # clean_string = remove_stopwords(data['text'])
-                # terms = tokenize_string(clean_string)
                 terms = tokenize_string(data['text'])
                 print("Counting term frequency")
                 count_terms(terms)
