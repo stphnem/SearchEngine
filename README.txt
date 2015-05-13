@@ -1,5 +1,16 @@
-If you wish to convey anything to the TA, please put it here.
+Run wordStat to get index
 
-Added SLF4J (slf4j-simple-1.7.12) to class path.
-Used provided BasicCrawler and BasicCrawlerController templates.
-Created file stop words from the website provided.
+Configuration:
+DATA_PATH
+- Specify the path where JSON data is held. 
+- Default is data/test_dump which I provided. This is small scale testing before creating a big index with the provided file_dump.
+
+INDEX_PATH
+- Path where the index file will be created
+
+STOPWORD_PATH
+- Path where stopwords file will be located
+
+What needs to be done:
+- Remove stopwords from string
+- Create TermID => DocID, Score index (TF-IDF)
