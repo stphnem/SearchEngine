@@ -12,5 +12,4 @@ STOPWORD_PATH
 - Path where stopwords file will be located
 
 What needs to be done:
-- Remove stopwords from string
 - Create TermID => DocID, Score index (TF-IDF)
