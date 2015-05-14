@@ -8,6 +8,7 @@ import os
 import Frequency
 import json
 import string
+import time
 import re
 import tokenize
 
@@ -132,9 +133,10 @@ def write_index(fileName):
 if __name__ == "__main__":
     # Configuration
     cleaner = Cleaner(style=True, links=True, page_structure=True)
-    DATA_PATH = 'data/test_dump'
+    DATA_PATH = 'D:\Documents\CS121\Assignment 3\data\\file_dump'
     INDEX_PATH = 'D:\Documents\CS121\Assignment 3\data\index.txt'
     STOPWORD_PATH = 'stopwords.txt'
+    START_TIME = time.time()
 
     # Global variables
     stopwords = read_stopwords(STOPWORD_PATH)
@@ -169,3 +171,6 @@ if __name__ == "__main__":
     print('\nTermID => DocID, Term Frequency')
     for i in termid_to_docfreq.items():
         print (i)
+
+    print('Total Number of words: ' + str(len(termid_to_docfreq.keys())))
+    print("--- %s seconds ---" % (time.time() - START_TIME))
